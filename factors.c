@@ -1,15 +1,23 @@
 #include "factors.h"
 /**
+ * gcd - function to calculate the greatest common divisor
+ * (gcd) of two number.
+ * @a: integer a
+ * @b:integer b
+ * Return: integer
  */
 int64_t gcd(int64_t a, int64_t b)
 {
 	if (b == 0)
 	{
-		return a;
+		return (a);
 	}
-	return gcd(b, a % b);
+	return (gcd(b, a % b));
 }
 /**
+ * pollards_rho - pollands rho algoritm for factorization
+ * @n: number
+ * Return: integer value
  */
 int64_t pollards_rho(int64_t n)
 {
@@ -25,6 +33,10 @@ int64_t pollards_rho(int64_t n)
 	return (d);
 }
 /**
+ * factorise - function to factorise a number n and print
+ * its factorization
+ * @n: numbere
+ * Retuen: Nothing
  */
 void factorise(int64_t n)
 {
@@ -53,6 +65,10 @@ void factorise(int64_t n)
 }
 
 /**
+ * main - entry point
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: (0) integer
  */
 
 int main(int argc, char *argv[])
@@ -66,7 +82,7 @@ int main(int argc, char *argv[])
 		printf("Usage: %s <file>\n", argv[0]);
 		return (1);
 	}
-	
+
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
